@@ -1,6 +1,7 @@
 (ns dd.views
     (:require [re-frame.core :as re-frame]
-              [re-com.core :as re-com]))
+              [re-com.core :as re-com]
+              [dd.components.dashboard :as dashboard-comp]))
 
 
 ;; home
@@ -20,7 +21,7 @@
 (defn home-panel []
   [re-com/v-box
    :gap "1em"
-   :children [[home-title] [link-to-about-page]]])
+   :children [[home-title] [link-to-about-page] [dashboard-comp/dashboard-component]]])
 
 
 ;; about

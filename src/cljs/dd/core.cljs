@@ -21,5 +21,3 @@
   (mount-root))
 
 (weasel/connect  "ws://localhost:9001" :verbose true)
-
-(js/console.log "sup")
