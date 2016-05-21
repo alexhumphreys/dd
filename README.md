@@ -4,15 +4,25 @@ A [re-frame](https://github.com/Day8/re-frame) application designed to ... well,
 
 ## Development Mode
 
-### Start Cider from Emacs:
+### Start REPL for vim
 
-Put this in your Emacs config file:
+In two terminals run the following:
 
 ```
-(setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+lein repl
 ```
 
-Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
+and
+
+```
+lein figwheel dev
+```
+
+Navigate to a clojurescript file and connect to the REPL with
+
+```
+:Piggieback (dd.handler/repl-env)
+```
 
 ### Compile css:
 
