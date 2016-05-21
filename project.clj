@@ -7,7 +7,9 @@
                  [secretary "1.2.3"]
                  [compojure "1.5.0"]
                  [ring "1.4.0"]
-                 [ring/ring-defaults  "0.1.2"]]
+                 [ring/ring-defaults  "0.1.2"]
+                 [prismatic/schema "1.1.1"]
+                ]
 
   :min-lein-version "2.5.3"
 
