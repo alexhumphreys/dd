@@ -8,6 +8,16 @@
    (reaction (:name @db))))
 
 (re-frame/register-sub
+ :money
+ (fn [db]
+   (reaction (:money @db))))
+
+(re-frame/register-sub
+ :towns
+ (fn [db]
+   (reaction (:towns @db))))
+
+(re-frame/register-sub
  :active-panel
  (fn [db _]
    (reaction (:active-panel @db))))
