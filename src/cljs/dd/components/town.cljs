@@ -4,6 +4,7 @@
               [reagent.core :as reagent]
               [devtools.core :as devtools]
               [dd.components.location :as location]
+              [dd.components.transport :as transport]
               [dd.util :as util]
               ))
 
@@ -13,5 +14,7 @@
   ^{:key (get town :id)}
   [re-com/v-box
         :gap  "1em"
-        :children [(location/location-component town)]
-])
+        :children [
+                   (location/location-component town)
+                   transport/transport-title
+                  ]])
