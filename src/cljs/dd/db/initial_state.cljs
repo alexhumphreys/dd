@@ -1,10 +1,5 @@
 (ns dd.db.initial-state)
 
-(def default-db
-  {:name "stuff" 
-   :towns towns
-   :money 11})
-
 (def locations
   [{:name :downtown
     :demand {:g 4
@@ -30,3 +25,8 @@
     :locations [:downtown :school]
     :transport {:rail true
                 :airport true}}])
+
+(def default-db
+  {:name "stuff2"
+   :towns towns
+   :money 11})

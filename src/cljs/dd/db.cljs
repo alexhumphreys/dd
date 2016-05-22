@@ -5,11 +5,6 @@
 (def default-db
   init/default-db)
 
-(def schema
-  (merge {:name s/Str}
-         {:money s/Int
-          :towns [town-schema]}))
-
 (def stock-schema
   {:g s/Int
    :w s/Int })
@@ -42,3 +37,8 @@
    :stock stock-schema
    :facilities [facility-schema]
    :attrs town-schema})
+
+(def schema
+  (merge {:name s/Str}
+         {:money s/Int
+          :towns [town-schema]}))
