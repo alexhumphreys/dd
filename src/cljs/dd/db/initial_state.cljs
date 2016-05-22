@@ -9,6 +9,10 @@
     :demand {:g 4
              :w 0}
     :goons 0}
+   {:name :club
+    :demand {:g 5
+             :w 5}
+    :goons 0}
    {:name :park
     :demand {:g 10
              :w 2}
@@ -22,7 +26,7 @@
                 :airport true}}
    {:id 2
     :name "kberg"
-    :locations [:downtown :school]
+    :locations [:school :club]
     :transport {:rail true
                 :airport true}}])
 
