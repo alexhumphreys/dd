@@ -24,3 +24,8 @@
  :set-active-panel
  (fn [db [_ active-panel]]
    (assoc db :active-panel active-panel)))
+
+(re-frame/register-handler
+ :set-selected-town
+ (fn [db [_ selected-town]]
+   (assoc db :selected-town selected-town)))

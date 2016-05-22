@@ -29,4 +29,6 @@
 (def default-db
   {:name "stuff2"
    :towns towns
+   :locations locations
+   :selected-town 1
    :money 11})

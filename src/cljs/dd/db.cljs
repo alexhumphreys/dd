@@ -40,8 +40,10 @@
 
 (def game-state-schema
   {:money s/Int
+   :locations [location-schema]
    :towns [town-schema]})
 
 (def schema
-  (merge {:name s/Str}
+  (merge {:name s/Str
+          :selected-town s/Int}
          game-state-schema))

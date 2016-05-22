@@ -13,6 +13,16 @@
    (reaction (:money @db))))
 
 (re-frame/register-sub
+ :locations
+ (fn [db]
+   (reaction (:locations @db))))
+
+(re-frame/register-sub
+ :selected-town
+ (fn [db]
+   (reaction (:selected-town @db))))
+
+(re-frame/register-sub
  :towns
  (fn [db]
    (reaction (:towns @db))))
