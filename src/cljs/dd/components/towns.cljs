@@ -2,6 +2,7 @@
     (:require [re-frame.core :as re-frame]
               [re-com.core :as re-com]
               [reagent.core :as reagent]
+              [dd.util :as util]
               [devtools.core :as devtools]
               ))
 
@@ -32,27 +33,19 @@
   (merge {:label (:name town)}
           (select-keys town [:id])))
 
-(defn tab-styles-demo
-  []
+(defn towns-component []
   (let [towns (re-frame/subscribe [:towns])
         selected-tab-id (reagent/atom (:id (first @towns)))
         change-tab #(reset! selected-tab-id %)]
     (fn []
-      [re-com/h-box
-       :align    :center
-       :children [[re-com/horizontal-tabs
-                   :model     selected-tab-id
-                   :tabs      (map town-tab @towns)
-                   :on-change change-tab]]])))
-
-(defn towns-component []
-  (let [towns (re-frame/subscribe [:towns])]
-    (def town-ul (for [t @towns]
-                (town-li t)))
-    (fn []
       [re-com/v-box
         :gap  "1em"
-        :children [[tab-styles-demo]
+        :children [[re-com/h-box
+                    :align    :center
+                    :children [[re-com/horizontal-tabs
+                                :model     selected-tab-id
+                                :tabs      (map town-tab @towns)
+                                :on-change change-tab]]]
                    [re-com/v-box
                      :gap  "1em"
-                     :children [town-ul]]]])))
+                     :children [(town (util/find-in :id @selected-tab-id @towns))]]]])))
