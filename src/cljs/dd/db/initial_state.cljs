@@ -21,12 +21,12 @@
 (def towns
   [{:id 1
     :name "Mitte"
-    :locations [:park :school]
+    :locations [:downtown :school]
     :transport {:rail true
                 :airport true}}
    {:id 2
     :name "kberg"
-    :locations [:school :club]
+    :locations [:park :club]
     :transport {:rail true
                 :airport true}}])
 

@@ -35,7 +35,6 @@
                                 :model     selected-tab-id
                                 :tabs      (map town-tab @towns)
                                 :on-change change-tab]]]
-                   ^{:key @selected-tab-id}
                    [re-com/v-box
                      :gap  "1em"
                      :children [(town/town-component 
