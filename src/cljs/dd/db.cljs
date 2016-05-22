@@ -38,7 +38,10 @@
    :facilities [facility-schema]
    :attrs town-schema})
 
+(def game-state-schema
+  {:money s/Int
+   :towns [town-schema]})
+
 (def schema
   (merge {:name s/Str}
-         {:money s/Int
-          :towns [town-schema]}))
+         game-state-schema))
