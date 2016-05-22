@@ -1,11 +1,14 @@
 (ns dd.db
-  (:require [schema.core :as s :include-macros true]))
+  (:require [schema.core :as s :include-macros true]
+            [dd.db.initial-state :as init]))
 
 (def default-db
-  {:name "reframe"})
+  init/default-db)
 
 (def schema
-  {:name s/Str})
+  (merge {:name s/Str}
+         {:money s/Int
+          :towns [town-schema]}))
 
 (def stock-schema
   {:g s/Int
@@ -16,13 +19,12 @@
    :w s/Int })
 
 (def location-schema
-  {:name s/Str
+  {:name s/Keyword
    :demand stock-schema
    :goons s/Int})
 
 (def transport-schema
-  {:road true
-   :rail s/Bool
+  {:rail s/Bool
    :airport s/Bool})
 
 (def facility-schema
@@ -30,8 +32,13 @@
    :capacity s/Int})
 
 (def town-schema
+  {:id s/Int
+   :name s/Str
+   :locations [s/Keyword]
+   :transport transport-schema})
+
+(def game-town-schema
   {:prices price-schema
    :stock stock-schema
    :facilities [facility-schema]
-   :locations [location-schema]
-   :transport transport-schema})
+   :attrs town-schema})
