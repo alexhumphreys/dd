@@ -8,10 +8,36 @@
 
 (devtools/install!)
 
+(defn location-details [loc]
+  (let [locations (re-frame/subscribe [:locations])]
+    (fn []
+     (def this-location (util/find-in :name loc @locations))
+     [re-com/v-box
+            :gap  "1em"
+            :children [
+                       [re-com/title
+                        :label (str (:name this-location))
+                        :level :level3]
+                       [re-com/title
+                        :label (str (:demand this-location))
+                        :level :level3]
+                      ]])))
+
+(defn all-locations [locs]
+  (for [l locs]
+    [location-details l]))
+
 (def location-title
   [re-com/title
    :label "Location"
    :level :level3])
+
+(defn location-one [loc]
+  (let [locations (re-frame/subscribe [:locations])]
+    (fn []
+    [re-com/title
+     :label (str loc)
+     :level :level3])))
 
 (defn location-els [locations]
   (for [l locations]
@@ -29,8 +55,12 @@
               ]])
 
 (defn town-component [town]
+  (.log js/console [location-title])
+  (.log js/console [location-details (first (:locations town))])
+  (.log js/console [(all-locations (:locations town))])
+
   [re-com/v-box
         :gap  "1em"
         :children [location-title
-                   (location-els (:locations town))
+                   (all-locations (:locations town))
                   ]])

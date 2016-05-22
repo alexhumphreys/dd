@@ -17,7 +17,7 @@
 (def towns
   [{:id 1
     :name "Mitte"
-    :locations [:downtown :school]
+    :locations [:park :school]
     :transport {:rail true
                 :airport true}}
    {:id 2
