@@ -16,5 +16,5 @@
         :gap  "1em"
         :children [
                    (location/location-component town)
-                   transport/transport-title
+                   (transport/transport-component town)
                   ]])

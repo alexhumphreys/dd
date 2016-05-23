@@ -19,8 +19,7 @@
    :goons s/Int})
 
 (def transport-schema
-  {:rail s/Bool
-   :airport s/Bool})
+  [s/Keyword])
 
 (def facility-schema
   {:ware s/Keyword

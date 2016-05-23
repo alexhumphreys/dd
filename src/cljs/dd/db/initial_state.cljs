@@ -22,13 +22,11 @@
   [{:id 1
     :name "Mitte"
     :locations [:downtown :school]
-    :transport {:rail true
-                :airport true}}
+    :transport [:rail :airport]}
    {:id 2
     :name "kberg"
     :locations [:park :club]
-    :transport {:rail true
-                :airport true}}])
+    :transport [:rail :airport]}])
 
 (def default-db
   {:name "stuff2"

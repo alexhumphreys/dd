@@ -31,7 +31,7 @@
 (def location-title
   [re-com/title
    :label "Locations"
-   :level :level3])
+   :level :level2])
 
 (defn location-component [town]
   ^{:key (get town :id)}
